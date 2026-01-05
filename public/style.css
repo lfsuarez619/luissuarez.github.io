@@ -2,6 +2,8 @@
 html, body {
     height: 100%;
     margin: 0;
+    background-color: #030303; /* light grey */
+    color: #fff;
 }
 
 
@@ -36,9 +38,53 @@ html, body {
     border-radius: 0px; /* optional polish */
 }
 
+.photography-page #app,
+.photography-page #photo {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+}
+
+/* Keep text block on the right like before */
+.photography-page #app {
+
+    width: 33.3333vw;
+    max-width: 520px;
+    margin: 120px 6vw 24px auto; /* top, right, bottom, left */
+}
+
+/* Photo takes up the left 2/3 and sits BELOW the text */
+.photography-page #photo {
+    width: 66.6667vw;
+    margin: 0 auto 40px 6vw; /* left margin keeps it on the left */
+}
+
+/* Image fills the photo area */
+.photography-page #photo img {
+    width: 100%;
+    height: auto;
+    display: block;
+    max-height: 80vh;
+    object-fit: contain;
+}
+
+/* Mobile: stack and center everything */
+@media (max-width: 640px) {
+    .photography-page #app,
+    .photography-page #photo {
+        width: 90vw;
+        margin: 100px auto 24px auto;
+    }
+}
+
 #photo figcaption {
     text-align: center;
     margin: 10px;
+}
+
+a, a:visited {
+    color: #7D7D7D;
 }
 
 /* NAV: centered horizontal menu */
@@ -48,6 +94,7 @@ html, body {
     left: 0;
     width: 100%;
     z-index: 1000;          /* sit above #photo and #app */
+    color: #fff;
 }
 
 .site-nav ul {
@@ -69,7 +116,7 @@ html, body {
     border-bottom: 2px solid transparent;
     transition: border-color 160ms ease, opacity 160ms ease;
     opacity: 0.9;
-    color: #111;             /* adjust to match your palette */
+    color: #fff;             /* adjust to match your palette */
 }
 
 .site-nav a:hover,
